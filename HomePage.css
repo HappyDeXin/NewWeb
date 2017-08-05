@@ -315,18 +315,66 @@ footer
 	font-size:15px;
 }
 /****************************轮播图样式************************************/
-#Slideshow
+#banner
 {
-	height:344px;
+	height:370px;
 	float:left;
 	overflow:hidden;
 	width:500px;
 	margin-left:8px;
-	margin-top:20px;
-	background:#069;
+	margin-top:21px;
 	position:relative;
 }
-
+#banner #pic li
+{
+	list-style:none;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+#banner #dot
+{
+	position:absolute;
+	top:300px;
+	left:200px;
+	z-index:5;
+}
+#banner #dot li
+{
+   display:block;
+   list-style:none;
+   float:left;
+   font-size:24px;
+   padding-left:5px;
+   cursor:pointer;/*设置点击手型*/
+   color:#666;
+}
+#banner span
+{
+	position:absolute;
+	top:300px;
+	height:34px;
+	width:500px;
+	background-color:#333;
+	opacity:0.4;
+	filter:alpha(opacity=30);/*IE浏览器*/
+	z-index:3;
+}
+#banner strong
+{
+	display:block;
+	position:absolute;
+	top:300px;
+	left:10px;
+	height:34px;
+	color:#FFF;
+	width:500px;
+	line-height:34px;
+    cursor:pointer;/*设置点击手型*/
+	z-index:4;
+	font-size:16px;
+}
 
 
 /*******************************行业动态和政策法规*************************************/

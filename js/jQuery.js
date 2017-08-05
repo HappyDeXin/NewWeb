@@ -54,6 +54,44 @@ function Nav(){
 
 // 首页
 function HomePage(){
+ //轮播器
+	//初始化
+	$('#pic img').hide();
+	$('#pic img').eq(0).show();
+	$('#dot li').eq(0).css('color','#fff');
+	$('#banner strong').html($('#pic img').eq(0).attr('alt'));
+	//手动点击黑点显示
+	$('#dot li').hover(function(){
+		clearInterval(banner_timer);
+		$('#pic img').hide();
+		$('#pic img').eq($(this).index()).show();
+		$('#dot li').css('color','#333');
+		$('#dot li').eq($(this).index()).css('color','#fff');
+		$('#banner strong').html($('#banner img').eq($(this).index()).attr('alt'));
+	},function(){
+	    banner_index=$(this).index()+1;
+		setInterval(banner_fn,2000);
+	});
+	//自动播放
+	var banner_index=1;//索引计数器（因为初始化时第一张图片已经显示，故从第二张开始播放12 012 012）
+	var len=$('#pic img').length;//轮播的总图片数
+	
+	var banner_timer=setInterval(banner_fn,2000);
+	function banner(){//图片基本显示
+		$('#pic img').hide();
+		$('#pic img').eq(banner_index).show();
+		$('#dot li').css('color','#333');
+		$('#dot li').eq(banner_index).css('color','#fff');
+		$('#banner strong').html($('#banner img').eq(banner_index).attr('alt'));
+	}
+	function banner_fn(){//判断索引
+		if(banner_index>=len)
+		banner_index=0;
+		banner();
+	    banner_index++;
+	}
+	
+	
 	
     //友情链接
 	$('#link_list1').mouseover(function(){
